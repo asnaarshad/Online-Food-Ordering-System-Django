@@ -1,0 +1,361 @@
+{% extends "master.html" %}
+      {% block asna %}
+        <!-- Page Header Start -->
+        <div class="page-header mb-0">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>Food Menu</h2>
+                    </div>
+                    <div class="col-12">
+                        <a href="">Home</a>
+                        <a href="">Menu</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Page Header End -->
+        
+        
+        <!-- Food Start -->
+        <div class="food mt-0">
+            <div class="container">
+                <div class="row align-items-center">
+                    {% for i in ftype %}
+                    <div class="col-md-4">
+                        <div class="food-item">
+                            <i class="flaticon-burger"></i>
+                            <h2>{{i.Name}}</h2>
+
+                            <a href="#">View Menu</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <!-- Food End -->
+
+        <!-- Menu Start -->
+        <div class="menu">
+            <div class="container">
+                <div class="section-header text-center">
+                    <p>Food Menu</p>
+                    <h2>Delicious Food Menu</h2>
+                </div>
+                <div class="menu-tab">
+                    <ul class="nav nav-pills justify-content-center">
+                        {% for i in ftype %}
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="pill" href="#{{ i.Name }}">{{ i.Name }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+
+                    <div class="tab-content">
+                        {% for i in ftype %}
+                        <div id="{{ i.Name }}" class="container tab-pane active">
+                            <div class="row">
+                                {% for i in fItem %}
+                                <div class="col-lg-7 col-md-12">
+                                    <div class="menu-item">
+                                        <div class="menu-img">
+                                            <img src="{{ i.Image }}" alt="Image">
+                                        </div>
+                                        <div class="menu-text">
+                                            <h3><span>{{ i.FoodName }}</span> <strong>${{ i.Price }}</strong></h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                                <div class="col-lg-5 d-none d-lg-block">
+                                    <img src="../static/img/menu-burger-img.jpg" alt="Image">
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        <div id="Snacks" class="container tab-pane fade">
+                            <div class="row">
+                                {% for i in fItem2 %}
+                                <div class="col-lg-7 col-md-12">
+                                    <div class="menu-item">
+                                        <div class="menu-img">
+                                            <img src="../static/img/menu-snack.jpg" alt="Image">
+                                        </div>
+                                        <div class="menu-text">
+                                            <h3><span>Corn Tikki - Spicy fried Aloo</span> <strong>$15.00</strong></h3>
+                                            <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>
+                                        </div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <div class="menu-img">
+                                            <img src="../static/img/menu-snack.jpg" alt="Image">
+                                        </div>
+                                        <div class="menu-text">
+                                            <h3><span>Bread besan Toast</span> <strong>$35.00</strong></h3>
+                                            <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>
+                                        </div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <div class="menu-img">
+                                            <img src="../static/img/menu-snack.jpg" alt="Image">
+                                        </div>
+                                        <div class="menu-text">
+                                            <h3><span>Healthy soya nugget snacks</span> <strong>$20.00</strong></h3>
+                                            <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>
+                                        </div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <div class="menu-img">
+                                            <img src="../static/img/menu-snack.jpg" alt="Image">
+                                        </div>
+                                        <div class="menu-text">
+                                            <h3><span>Tandoori Soya Chunks</span> <strong>$30.00</strong></h3>
+                                            <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                                <div class="col-lg-5 d-none d-lg-block">
+                                    <img src="../static/img/menu-snack-img.jpg" alt="Image">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="Beverages" class="container tab-pane fade">
+                            <div class="row">
+                                <div class="col-lg-7 col-md-12">
+                                    <div class="menu-item">
+                                        <div class="menu-img">
+                                            <img src="../static/img/menu-beverage.jpg" alt="Image">
+                                        </div>
+                                        <div class="menu-text">
+                                            <h3><span>Single Cup Brew</span> <strong>$7.00</strong></h3>
+                                            <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>
+                                        </div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <div class="menu-img">
+                                            <img src="../static/img/menu-beverage.jpg" alt="Image">
+                                        </div>
+                                        <div class="menu-text">
+                                            <h3><span>Caffe Americano</span> <strong>$9.00</strong></h3>
+                                            <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>
+                                        </div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <div class="menu-img">
+                                            <img src="../static/img/menu-beverage.jpg" alt="Image">
+                                        </div>
+                                        <div class="menu-text">
+                                            <h3><span>Caramel Macchiato</span> <strong>$15.00</strong></h3>
+                                            <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>
+                                        </div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <div class="menu-img">
+                                            <img src="../static/img/menu-beverage.jpg" alt="Image">
+                                        </div>
+                                        <div class="menu-text">
+                                            <h3><span>Standard black coffee</span> <strong>$8.00</strong></h3>
+                                            <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>
+                                        </div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <div class="menu-img">
+                                            <img src="../static/img/menu-beverage.jpg" alt="Image">
+                                        </div>
+                                        <div class="menu-text">
+                                            <h3><span>Standard black coffee</span> <strong>$12.00</strong></h3>
+                                            <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 d-none d-lg-block">
+                                    <img src="../static/img/menu-beverage-img.jpg" alt="Image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Menu End -->
+<!--        &lt;!&ndash; Menu Start &ndash;&gt;-->
+<!--        <div class="menu">-->
+<!--            <div class="container">-->
+<!--                <div class="section-header text-center">-->
+<!--                    <p>Food Menu</p>-->
+<!--                    <h2>Delicious Food Menu</h2>-->
+<!--                </div>-->
+<!--                <div class="menu-tab">-->
+<!--                    <ul class="nav nav-pills justify-content-center">-->
+<!--                        <li class="nav-item">-->
+<!--                            <a class="nav-link active" data-toggle="pill" href="#burgers">Burgers</a>-->
+<!--                        </li>-->
+<!--                        <li class="nav-item">-->
+<!--                            <a class="nav-link" data-toggle="pill" href="#snacks">Snacks</a>-->
+<!--                        </li>-->
+<!--                        <li class="nav-item">-->
+<!--                            <a class="nav-link" data-toggle="pill" href="#beverages">Beverages</a>-->
+<!--                        </li>-->
+<!--                    </ul>-->
+<!--                    <div class="tab-content">-->
+<!--                        <div id="burgers" class="container tab-pane active">-->
+<!--                            <div class="row">-->
+<!--                                <div class="col-lg-7 col-md-12">-->
+<!--                                    <div class="menu-item">-->
+<!--                                        <div class="menu-img">-->
+<!--                                            <img src="../static/img/menu-burger.jpg" alt="Image">-->
+<!--                                        </div>-->
+<!--                                        <div class="menu-text">-->
+<!--                                            <h3><span>Mini cheese Burger</span> <strong>$9.00</strong></h3>-->
+<!--                                            <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="menu-item">-->
+<!--                                        <div class="menu-img">-->
+<!--                                            <img src="../static/img/menu-burger.jpg" alt="Image">-->
+<!--                                        </div>-->
+<!--                                        <div class="menu-text">-->
+<!--                                            <h3><span>Double size burger</span> <strong>$11.00</strong></h3>-->
+<!--                                            <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="menu-item">-->
+<!--                                        <div class="menu-img">-->
+<!--                                            <img src="../static/img/menu-burger.jpg" alt="Image">-->
+<!--                                        </div>-->
+<!--                                        <div class="menu-text">-->
+<!--                                            <h3><span>Bacon, EGG and Cheese</span> <strong>$13.00</strong></h3>-->
+<!--                                            <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="menu-item">-->
+<!--                                        <div class="menu-img">-->
+<!--                                            <img src="../static/img/menu-burger.jpg" alt="Image">-->
+<!--                                        </div>-->
+<!--                                        <div class="menu-text">-->
+<!--                                            <h3><span>Pulled porx Burger</span> <strong>$18.00</strong></h3>-->
+<!--                                            <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="menu-item">-->
+<!--                                        <div class="menu-img">-->
+<!--                                            <img src="../static/img/menu-burger.jpg" alt="Image">-->
+<!--                                        </div>-->
+<!--                                        <div class="menu-text">-->
+<!--                                            <h3><span>Fried chicken Burger</span> <strong>$22.00</strong></h3>-->
+<!--                                            <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="col-lg-5 d-none d-lg-block">-->
+<!--                                    <img src="../static/img/menu-burger-img.jpg" alt="Image">-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div id="snacks" class="container tab-pane fade">-->
+<!--                            <div class="row">-->
+<!--                                <div class="col-lg-7 col-md-12">-->
+<!--                                    <div class="menu-item">-->
+<!--                                        <div class="menu-img">-->
+<!--                                            <img src="../static/img/menu-snack.jpg" alt="Image">-->
+<!--                                        </div>-->
+<!--                                        <div class="menu-text">-->
+<!--                                            <h3><span>Corn Tikki - Spicy fried Aloo</span> <strong>$15.00</strong></h3>-->
+<!--                                            <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="menu-item">-->
+<!--                                        <div class="menu-img">-->
+<!--                                            <img src="../static/img/menu-snack.jpg" alt="Image">-->
+<!--                                        </div>-->
+<!--                                        <div class="menu-text">-->
+<!--                                            <h3><span>Bread besan Toast</span> <strong>$35.00</strong></h3>-->
+<!--                                            <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="menu-item">-->
+<!--                                        <div class="menu-img">-->
+<!--                                            <img src="../static/img/menu-snack.jpg" alt="Image">-->
+<!--                                        </div>-->
+<!--                                        <div class="menu-text">-->
+<!--                                            <h3><span>Healthy soya nugget snacks</span> <strong>$20.00</strong></h3>-->
+<!--                                            <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="menu-item">-->
+<!--                                        <div class="menu-img">-->
+<!--                                            <img src="../static/img/menu-snack.jpg" alt="Image">-->
+<!--                                        </div>-->
+<!--                                        <div class="menu-text">-->
+<!--                                            <h3><span>Tandoori Soya Chunks</span> <strong>$30.00</strong></h3>-->
+<!--                                            <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="col-lg-5 d-none d-lg-block">-->
+<!--                                    <img src="../static/img/menu-snack-img.jpg" alt="Image">-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div id="beverages" class="container tab-pane fade">-->
+<!--                            <div class="row">-->
+<!--                                <div class="col-lg-7 col-md-12">-->
+<!--                                    <div class="menu-item">-->
+<!--                                        <div class="menu-img">-->
+<!--                                            <img src="../static/img/menu-beverage.jpg" alt="Image">-->
+<!--                                        </div>-->
+<!--                                        <div class="menu-text">-->
+<!--                                            <h3><span>Single Cup Brew</span> <strong>$7.00</strong></h3>-->
+<!--                                            <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="menu-item">-->
+<!--                                        <div class="menu-img">-->
+<!--                                            <img src="../static/img/menu-beverage.jpg" alt="Image">-->
+<!--                                        </div>-->
+<!--                                        <div class="menu-text">-->
+<!--                                            <h3><span>Caffe Americano</span> <strong>$9.00</strong></h3>-->
+<!--                                            <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="menu-item">-->
+<!--                                        <div class="menu-img">-->
+<!--                                            <img src="../static/img/menu-beverage.jpg" alt="Image">-->
+<!--                                        </div>-->
+<!--                                        <div class="menu-text">-->
+<!--                                            <h3><span>Caramel Macchiato</span> <strong>$15.00</strong></h3>-->
+<!--                                            <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="menu-item">-->
+<!--                                        <div class="menu-img">-->
+<!--                                            <img src="../static/img/menu-beverage.jpg" alt="Image">-->
+<!--                                        </div>-->
+<!--                                        <div class="menu-text">-->
+<!--                                            <h3><span>Standard black coffee</span> <strong>$8.00</strong></h3>-->
+<!--                                            <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="menu-item">-->
+<!--                                        <div class="menu-img">-->
+<!--                                            <img src="../static/img/menu-beverage.jpg" alt="Image">-->
+<!--                                        </div>-->
+<!--                                        <div class="menu-text">-->
+<!--                                            <h3><span>Standard black coffee</span> <strong>$12.00</strong></h3>-->
+<!--                                            <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="col-lg-5 d-none d-lg-block">-->
+<!--                                    <img src="../static/img/menu-beverage-img.jpg" alt="Image">-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        &lt;!&ndash; Menu End &ndash;&gt;-->
+{% endblock %}

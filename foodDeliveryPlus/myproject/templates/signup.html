@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form action="" method="post" novalidate>
+    {% csrf_token %}
+    {% for f in form %}
+    <p>{{f.label_tag}}</p>
+    <p>{{f}}</p>
+    <p>{{f.errors}}</p>
+    {% endfor %}
+    <br>
+    <input type="submit" value="Register">
+
+</form>
+{% if m %}
+<p>{{m}}</p>
+{% endif %}
+
+</body>
+</html>

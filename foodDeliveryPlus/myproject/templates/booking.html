@@ -1,0 +1,71 @@
+{% extends "master.html" %}
+      {% block asna %}
+        <!-- Page Header Start -->
+        <div class="page-header mb-0">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>Order Your Food</h2>
+                    </div>
+                    <div class="col-12">
+                        <a href="">Home</a>
+                        <a href="">Order</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Page Header End -->
+        
+        <!-- Contact Start -->
+        <div class="contact">
+            <div class="container">
+                <div class="row contact-form">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8">
+                        <div id="success">
+                            {% if m %}
+                                <h5>{{m}}</h5>
+                            {% endif %}
+                        </div>
+
+                        <form  method="POST" action="">
+                            {% csrf_token %}
+                            <div class="control-group">
+                                <input type="text" class="form-control" name="orderName" id="name" placeholder="Name" required="required" data-validation-required-message="Please enter your name" />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <input type="text" class="form-control" name="orderPhone" id="phone" placeholder="Phone" required="required" data-validation-required-message="Please enter your phone" />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <input type="number" class="form-control" name="orderQuantity" id="quantity" placeholder="Quantity" required="required" data-validation-required-message="Please enter a quantity" />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <input type="text" class="form-control" name="orderAddress" id="address" placeholder="Address" required="required" data-validation-required-message="Please enter a address" />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <select  name="type" class="custom-select form-control">
+                                    <option selected>Select Item</option>
+                                    {% for i in fItem %}
+                                    <option value="{{i.Id}}">{{i.FoodName}}</option>
+                                    {% endfor %}
+                                </select>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div>
+                                <button class="btn custom-btn" type="submit" id="sendMessageButton">Order</button>
+
+                            </div>
+
+                        </form>
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Contact End -->
+
+{% endblock %}
